@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:iti_project/app_strings.dart';
+import 'package:iti_project/utils/app_strings.dart';
 
-import 'package:iti_project/app_colors.dart';
-import 'package:iti_project/forget_password_row.dart';
+import 'package:iti_project/utils/app_colors.dart';
+import 'package:iti_project/auth/forget_password_row.dart';
 
 class LoginScreenConente extends StatelessWidget {
   const LoginScreenConente({super.key});
