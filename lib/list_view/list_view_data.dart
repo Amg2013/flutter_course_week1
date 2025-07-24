@@ -3,14 +3,18 @@ abstract class DataGenerator {
 }
 
 class ApiDataGenerator extends DataGenerator {
-  final String apiUrl;
+  // final String apiUrl;
 
-  ApiDataGenerator(this.apiUrl);
+  ApiDataGenerator();
 
   @override
   Future<List<String>> generateData() async {
     await Future.delayed(Duration(seconds: 1)); // Simulate delay
-    return List.generate(10, (index) => 'APi Data repo Item ${index + 2}');
+    return List.generate(
+      10,
+      (index) => 'APi Data repo >>>>>>>>Item ${index + 20}',
+    );
+
     // final response = await http.get(Uri.parse(apiUrl));
     // if (response.statusCode == 200) {
     //   final data = jsonDecode(response.body) as List;
@@ -25,6 +29,9 @@ class DummyDataGenerator extends DataGenerator {
   @override
   Future<List<String>> generateData() async {
     await Future.delayed(Duration(seconds: 1)); // Simulate delay
-    return List.generate(10, (index) => 'Dummy Item ${index + 1}');
+    return List.generate(
+      10,
+      (index) => 'Dummy Item <<<<<<<<<<<<<<<<<<<<<< ${index + 1}',
+    );
   }
 }
