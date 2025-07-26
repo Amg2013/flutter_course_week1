@@ -19,6 +19,7 @@ class DataListView extends StatelessWidget {
           }
           final items = snapshot.data!;
           return ListView.separated(
+            // scrollDirection: Axis.,
             separatorBuilder: (context, index) => Divider(),
             itemCount: items.length,
             itemBuilder: (context, index) {

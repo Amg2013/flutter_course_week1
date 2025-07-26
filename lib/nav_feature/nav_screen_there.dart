@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iti_project/utils/app_colors.dart';
 
 class FirstNamedScreen extends StatelessWidget {
   @override
@@ -25,7 +26,7 @@ class FirstNamedScreen extends StatelessWidget {
 
             SizedBox(height: 20),
             // PushReplacement Navigation
-            ElevatedButton(
+            TextButton(
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
@@ -53,6 +54,43 @@ class FirstNamedScreen extends StatelessWidget {
                 );
               },
               child: Text('Pass Data to Third Screen'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => SecondNamedScreen()),
+                );
+              },
+              child: Text('PushReplacement to Second Screen'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => SecondNamedScreen()),
+                );
+              },
+              child: Text('PushReplacement to Second Screen'),
+            ),
+            Text('Hello, World!', style: Theme.of(context).textTheme.bodyLarge),
+
+            Text('Hello, World!', style: Theme.of(context).textTheme.bodySmall),
+
+            Text(
+              'Hello, World!',
+              style: Theme.of(
+                context,
+              ).textTheme.headlineSmall!.copyWith(color: AppColors.mainColor),
+            ),
+
+            Text(
+              'Hello, World!',
+              style: Theme.of(context).textTheme.headlineSmall,
+            ),
+            Text(
+              'Hello, World!',
+              style: Theme.of(context).textTheme.headlineSmall,
             ),
           ],
         ),
