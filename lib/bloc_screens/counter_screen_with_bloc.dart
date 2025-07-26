@@ -10,40 +10,85 @@ class CounterScreenWithBloc extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text('Lifecycle Example')),
       body: Center(
-        child: BlocBuilder<CounterBloc, CounterStates>(
-          builder: (context, state) {
-            if (state is InitialCounterStates) {
-              return Column(
-                children: [
-                  Text(
-                    'Initial Count: ${state.count}',
-                    style: Theme.of(context).textTheme.displayLarge,
-                  ),
-                  const SizedBox(height: 20),
-                  Text(
-                    'Ready to start counting!',
-                    style: Theme.of(context).textTheme.bodyLarge,
-                  ),
-                ],
-              );
-            } else if (state is InitialCounterStates) {
-              return Column(
-                children: [
-                  Text(
-                    'Initial Count: ${state.count}',
-                    style: Theme.of(context).textTheme.displayLarge,
-                  ),
-                  const SizedBox(height: 20),
-                  Text(
-                    'Ready to start counting!',
-                    style: Theme.of(context).textTheme.bodyLarge,
-                  ),
-                ],
-              );
-            }
-            if (state is InitialCounterStates) {}
-            return Text('');
-          },
+        child: Column(
+          children: [
+            BlocBuilder<CounterBloc, CounterStates>(
+              builder: (context, state) {
+                if (state is InitialCounterStates) {
+                  return Column(
+                    children: [
+                      Text(
+                        'Initial Count: ${state.count}',
+                        // style: Theme.of(context).textTheme.displayLarge,
+                      ),
+                      const SizedBox(height: 20),
+                      Text(
+                        'Ready to start counting!',
+                        // style: Theme.of(context).textTheme.bodyLarge,
+                      ),
+                    ],
+                  );
+                } else if (state is CounterStateInc) {
+                  return Column(
+                    children: [
+                      Text(
+                        'Initial Count: ${state.count}',
+                        style: Theme.of(context).textTheme.displayLarge,
+                      ),
+                      const SizedBox(height: 20),
+                      Text(
+                        'Ready to start counting!',
+                        style: Theme.of(context).textTheme.bodyLarge,
+                      ),
+                    ],
+                  );
+                } else if (state is CounterStatesDec) {
+                  return Column(
+                    children: [
+                      Text(
+                        'Initial Count: ${state.count}',
+                        style: Theme.of(context).textTheme.displayLarge,
+                      ),
+                      const SizedBox(height: 20),
+                      Text(
+                        'Ready to start counting!',
+                        style: Theme.of(context).textTheme.bodyLarge,
+                      ),
+                    ],
+                  );
+                }
+
+                return Text(
+                  '>>>>>>>>        >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>',
+                );
+              },
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                ElevatedButton(
+                  onPressed:
+                  // event
+                  () {
+                    context.read<CounterBloc>().add(
+                      IncermenButtonPressdEvent(amount: 20),
+                    );
+                  },
+
+                  child: Text(' add '),
+                ),
+
+                ElevatedButton(
+                  onPressed: () {
+                    context.read<CounterBloc>().add(
+                      DecermenButtonPressdEvent(amount: 20),
+                    );
+                  },
+                  child: Text(' DecermenButtonPressdEv'),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
