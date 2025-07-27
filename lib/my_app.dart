@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:iti_project/features/auth/bloc/login_bloc.dart';
+import 'package:iti_project/features/auth/login_screen.dart';
 import 'package:iti_project/bloc_screens/bloc/counter_bloc.dart';
-import 'package:iti_project/bloc_screens/counter_screen_with_bloc.dart';
-import 'package:iti_project/nav_feature/nav_screen_there.dart';
 import 'package:iti_project/utils/app_themes.dart';
 
 class MyApp extends StatelessWidget {
@@ -14,13 +14,16 @@ class MyApp extends StatelessWidget {
     ///
     ///
     ///
-    return BlocProvider(
-      create: (context) => CounterBloc(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => CounterBloc()),
+        BlocProvider(create: (context) => LoginBloc()),
+      ],
       child: MaterialApp(
         theme: AppThemes.lightTheme,
 
         // darkTheme: AppThemes.lightTheme,
-        home: CounterScreenWithBloc(),
+        home: LoginScreen(),
       ),
     );
   }
