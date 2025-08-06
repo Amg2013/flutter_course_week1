@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iti_project/features/singup/bloc/signup_bloc.dart';
+import 'package:iti_project/features/singup/models/Auth_repo.dart';
 import 'package:iti_project/nav_feature/nav_examples.dart';
 
 class SingUpScreenWhithBloc extends StatefulWidget {
   const SingUpScreenWhithBloc({super.key});
+  //final AuthRepo authRepo = AuthRepo();
 
   @override
   State<SingUpScreenWhithBloc> createState() => _SingUpScreenWhithBlocState();
@@ -26,9 +28,15 @@ class _SingUpScreenWhithBlocState extends State<SingUpScreenWhithBloc> {
   }
 
   @override
+  void initState() {
+    context.read<SignUpBloc>().add(InitiSingUpScreenEvent());
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => SignUpBloc()..add(InitiSingUpScreenEvent()),
+      create: (context) => SignUpBloc(AuthRepo()),
 
       child: BlocConsumer<SignUpBloc, SignUpState>(
         listener: (context, state) {

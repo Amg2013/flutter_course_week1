@@ -5,7 +5,7 @@ class AppThemes {
   static final ThemeData lightTheme = ThemeData(
     colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF673AB7)),
     appBarTheme: AppBarTheme(
-      color: AppColors.appbarLightColor,
+      color: const Color.fromARGB(255, 246, 68, 255),
       elevation: 20,
       centerTitle: true,
       shadowColor: Color(0xFF673AB7),
@@ -16,7 +16,7 @@ class AppThemes {
       style: TextButton.styleFrom(
         backgroundColor: AppColors.secnderyColor,
         //  alignment: Alignment.bottomCenter,
-        textStyle: TextStyle(color: Colors.blueAccent),
+        textStyle: TextStyle(color: const Color.fromARGB(255, 7, 22, 48)),
       ),
     ),
 

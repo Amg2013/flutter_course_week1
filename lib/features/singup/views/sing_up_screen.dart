@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iti_project/features/singup/bloc/signup_bloc.dart';
+import 'package:iti_project/features/singup/models/Auth_repo.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -28,7 +29,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => SignUpBloc(),
+      create: (context) => SignUpBloc(AuthRepo()),
       child: Scaffold(
         appBar: AppBar(title: const Text('Sign Up')),
         body: BlocBuilder<SignUpBloc, SignUpState>(

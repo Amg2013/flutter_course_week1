@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iti_project/features/auth/bloc/login_bloc.dart';
 import 'package:iti_project/features/auth/login_screen.dart';
 import 'package:iti_project/bloc_screens/bloc/counter_bloc.dart';
+import 'package:iti_project/tasks/screens/add_tassk.dart';
+import 'package:iti_project/tasks/screens/task_home.dart';
 import 'package:iti_project/utils/app_themes.dart';
 
 class MyApp extends StatelessWidget {
@@ -21,9 +23,9 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         theme: AppThemes.lightTheme,
-
+        debugShowCheckedModeBanner: false,
         // darkTheme: AppThemes.lightTheme,
-        home: LoginScreen(),
+        home: TaskHome(),
       ),
     );
   }

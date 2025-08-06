@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:iti_project/features/singup/screens/sing_up_screen.dart';
-import 'package:iti_project/features/singup/screens/sing_up_screen_whith_bloc.dart';
+import 'package:iti_project/features/singup/views/sing_up_screen.dart';
+import 'package:iti_project/features/singup/views/sing_up_screen_whith_bloc.dart';
 import 'package:iti_project/utils/app_strings.dart';
 
 import 'package:iti_project/utils/app_colors.dart';
